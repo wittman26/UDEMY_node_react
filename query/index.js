@@ -30,6 +30,18 @@ app.post('/events', (req, res) => {
       const post = posts[postId];
       post.comments.push({ id, content });
     }
+
+    if (type === 'CommentUpdated') {
+      const { id, content, postId, status } = data;
+  
+      const post = posts[postId];
+      const comment = post.comments.find(comment => {
+        return comment.id === id;
+      });
+  
+      comment.status = status;
+      comment.content = content;
+    }    
   
     console.log("Actual Posts State: " + JSON.stringify(posts));
     console.log(posts);
