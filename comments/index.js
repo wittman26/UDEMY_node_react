@@ -40,7 +40,7 @@ app.post('/posts/:id/comments', async (req, res) => {
 
 // Call from the Bus Event
 app.post('/events', async (req, res) => {
-  console.log('Event Recived: ', req.body.type);
+  console.log('SVC-COMMENTS: Event Recived: ', req.body.type);
 
   const { type, data } = req.body;
 

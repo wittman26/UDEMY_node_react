@@ -37,7 +37,7 @@ app.post('/posts', async (req, res) => {
 
 // Call from the Bus Event
 app.post('/events', (req, res) => {
-  console.log('Event Recived: ', req.body.type);
+  console.log('SVC-POSTS: Event Received: ', req.body.type);
   res.send({});
 })
 
