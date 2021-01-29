@@ -1,6 +1,9 @@
 # Use an existing Image as base
 FROM node:alpine
 
+# Fix a bug to run in a container
+ENV CI=true
+
 # Create app directory
 WORKDIR /app
 # Copy every package.json
